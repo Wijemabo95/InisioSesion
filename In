@@ -1,30 +1,29 @@
-meta charset="UTF-8">
 <script>
 
     var inicioDeSesionRegistrado = "Wijemabo95";
     var contrasenhaRegistrada = "william95";
-    var intentos = 1
-    var contador = 1
-
+    var intentos = 3;
+    var contador = 1;
+    var inicioDeSesionIngresado;
+    var contrasenhaIngresada;
     
 
 
     while(contador <= intentos) { 
 
-        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        inicioDeSesionIngresado = prompt("Ingrese su usuario");
 
-        if (inicioDeSesionIngresado == inicioDeSesionRegistrado) {
-            var contrasenhaIngresada = prompt("Ingrese su contraseña");    
+        if (inicioDeSesionIngresado === inicioDeSesionRegistrado) {
+            contrasenhaIngresada = prompt("Ingrese su contraseña");   
+            if (contrasenhaIngresada === contrasenhaRegistrada) {
+                alert("Bienvenido " + inicioDeSesionRegistrado);
+                break;
+            } else {
+                alert("Contraseña erronea");
+            } 
+        } else{
+        alert("Usuario erroneo");
         }
-
-        else{
-        alert("Usuario erroneo")
-        }
-
-       
-
-           
-
-     
+        contador++;
     }
 </script>
